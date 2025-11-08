@@ -10,9 +10,23 @@ const ASSETS_DIR = join(import.meta.dir, '..', 'assets');
 const TEMPLATE_PATH = join(import.meta.dir, 'template.html');
 const CNAME_PATH = join(import.meta.dir, '..', 'CNAME');
 
+// Helper to count total addresses for a facilitator
+function getTotalAddressesForFacilitator(facilitator: Facilitator): number {
+  return Object.values(facilitator.addresses).reduce(
+    (sum, addresses) => sum + addresses.length,
+    0
+  );
+}
+
 // Generate HTML for the website
 async function generateHTML() {
   const facilitatorCards = allFacilitators
+    .sort((a, b) => {
+      // Sort by total addresses, descending (most addresses first)
+      const aTotal = getTotalAddressesForFacilitator(a);
+      const bTotal = getTotalAddressesForFacilitator(b);
+      return bTotal - aTotal;
+    })
     .map((facilitator: Facilitator) => generateCard(facilitator))
     .join('\n');
 
