@@ -16,4 +16,5 @@ export { codenut, codenutFacilitator } from './codenut';
 export { ultravioletadao, ultravioletadaoFacilitator } from './ultravioletadao';
 export { virtuals, virtualsFacilitator } from './virtuals';
 export { polygon, polygonFacilitator } from './polygon';
+export { kamiyo, kamiyoFacilitator } from './kamiyo';
 export { heurist, heuristFacilitator } from './heurist';

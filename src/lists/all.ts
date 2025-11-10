@@ -16,6 +16,7 @@ import {
   ultravioletadaoFacilitator,
   virtualsFacilitator,
   polygonFacilitator,
+  kamiyoFacilitator,
   heuristFacilitator,
 } from '../facilitators';
 
@@ -41,6 +42,7 @@ const FACILITATORS = validateUniqueFacilitators([
   ultravioletadaoFacilitator,
   virtualsFacilitator,
   polygonFacilitator,
+  kamiyoFacilitator,
   heuristFacilitator,
 ]);
 
