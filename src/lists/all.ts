@@ -16,6 +16,7 @@ import {
   ultravioletadaoFacilitator,
   virtualsFacilitator,
   polygonFacilitator,
+  kamiyoFacilitator,
 } from '../facilitators';
 
 import { validateUniqueFacilitators } from './validate';
@@ -40,6 +41,7 @@ const FACILITATORS = validateUniqueFacilitators([
   ultravioletadaoFacilitator,
   virtualsFacilitator,
   polygonFacilitator,
+  kamiyoFacilitator,
 ]);
 
 export const allFacilitators: Facilitator[] =
