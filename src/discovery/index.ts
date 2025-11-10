@@ -9,5 +9,6 @@ export { aurracloudDiscovery } from '../facilitators/aurracloud';
 export { thirdwebDiscovery } from '../facilitators/thirdweb';
 export { questflowDiscovery } from '../facilitators/questflow';
 export { ultravioletadaoDiscovery } from '../facilitators/ultravioletadao';
+export { kamiyoDiscovery } from '../facilitators/kamiyo';
 
 export { discoverableFacilitators } from './facilitators';

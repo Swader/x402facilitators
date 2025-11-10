@@ -75,10 +75,13 @@ This is useful for building agents that search for tools.
 ### Discovery API
 
 ```typescript
-import { coinbaseDiscovery, listAllFacilitatorResources } from '@swader/x402facilitators';
+import { coinbaseDiscovery, kamiyoDiscovery, listAllFacilitatorResources } from '@swader/x402facilitators';
 
 // List all resources from a facilitator
 const resources = await listAllFacilitatorResources(coinbaseDiscovery);
+
+// Or from KAMIYO (multi-chain)
+const kamiyoResources = await listAllFacilitatorResources(kamiyoDiscovery);
 ```
 
 ### Facilitators Supporting Discovery
@@ -90,6 +93,8 @@ The following facilitators currently support resource discovery:
 - **thirdweb** - Web3 development platform
 - **PayAI** - AI-payment infrastructure
 - **Ultravioleta DAO** - Community-driven multichain facilitator
+- **KAMIYO** - Multi-chain AI facilitator
+- **Questflow** - AI workflow automation platform
 
 ### Enumerate All Discoverable Facilitators
 
@@ -131,6 +136,9 @@ This package includes pre-configured integrations for the following X402 facilit
 | **CodeNut**    | BASE          | No        | No                             |
 | **Ultravioleta DAO** | BASE, SOLANA | ✅ Yes    | No                             |
 | **Virtuals**   | BASE          | No        | No                             |
+| **402104**     | BASE          | No        | No                             |
+| **KAMIYO**     | BASE, POLYGON, SOLANA | ✅ Yes    | No                             |
+| **Heurist**    | BASE          | No        | No                             |
 
 ### Import Individual Facilitators
 
@@ -150,7 +158,10 @@ import {
   xecho,
   codenut,
   ultravioletadao,
-  virtuals
+  virtuals,
+  f402104,
+  kamiyo,
+  heurist
 } from '@swader/x402facilitators';
 
 // Facilitators requiring setup

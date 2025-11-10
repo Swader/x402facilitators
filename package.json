@@ -1,6 +1,6 @@
 {
   "name": "@swader/x402facilitators",
-  "version": "0.0.12",
+  "version": "0.0.14",
   "description": "x402 facilitator configuration and validation utilities",
   "type": "module",
   "main": "./dist/index.js",
