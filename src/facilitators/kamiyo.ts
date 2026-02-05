@@ -4,24 +4,24 @@ import { USDC_BASE_TOKEN, USDC_POLYGON_TOKEN, USDC_SOLANA_TOKEN } from '../const
 import type { Facilitator, FacilitatorConfig } from '../types';
 
 export const kamiyo: FacilitatorConfig = {
-  url: 'https://kamiyo.ai/api/v1/x402',
+  url: 'https://x402.kamiyo.ai',
 };
 
 export const kamiyoDiscovery: FacilitatorConfig = {
-  url: 'https://kamiyo.ai/api/v1/x402',
+  url: 'https://x402.kamiyo.ai',
 };
 
 export const kamiyoFacilitator = {
   id: 'kamiyo',
   metadata: {
     name: 'KAMIYO',
-    image: 'https://x402scan.com/kamiyo.png',
-    docsUrl: 'https://kamiyo.ai/docs',
+    image: 'https://kamiyo.ai/favicon.png',
+    docsUrl: 'https://docs.kamiyo.ai',
     color: '#00D4AA',
   },
   config: kamiyo,
   discoveryConfig: kamiyoDiscovery,
-  facilitatorUrl: 'https://kamiyo.ai/api/v1/x402',
+  facilitatorUrl: 'https://x402.kamiyo.ai',
   accessType: AccessType.GATED,
   fee: 0,
   addresses: {
