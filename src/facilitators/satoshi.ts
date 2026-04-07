@@ -4,7 +4,7 @@ import { USDC_BASE_TOKEN, USDC_SOLANA_TOKEN } from '../constants';
 import type { Facilitator, FacilitatorConfig } from '../types';
 
 export const satoshi: FacilitatorConfig = {
-  url: 'https://x402-facilitator.happysmoke-e4fd0a77.eastus.azurecontainerapps.io',
+  url: 'https://facilitator.bitcoinsapi.com',
 };
 
 export const satoshiFacilitator = {
@@ -17,7 +17,7 @@ export const satoshiFacilitator = {
   },
   config: satoshi,
   facilitatorUrl:
-    'https://x402-facilitator.happysmoke-e4fd0a77.eastus.azurecontainerapps.io',
+    'https://facilitator.bitcoinsapi.com',
   accessType: AccessType.PUBLIC,
   fee: 0,
   addresses: {
