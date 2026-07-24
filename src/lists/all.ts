@@ -18,6 +18,7 @@ import {
   polygonFacilitator,
   kamiyoFacilitator,
   heuristFacilitator,
+  nearX402Facilitator,
 } from '../facilitators';
 
 import { validateUniqueFacilitators } from './validate';
@@ -26,6 +27,7 @@ import type { Facilitator } from '../types';
 
 const FACILITATORS = validateUniqueFacilitators([
   coinbaseFacilitator,
+  nearX402Facilitator,
   aurracloudFacilitator,
   thirdwebFacilitator,
   x402rsFacilitator,

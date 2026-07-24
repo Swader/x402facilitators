@@ -47,6 +47,7 @@ export interface Token {
 
 export enum Network {
   BASE = 'base',
+  NEAR = 'near',
   POLYGON = 'polygon',
   SOLANA = 'solana',
 }

@@ -50,6 +50,7 @@ function getExplorerUrl(address: string, network: Network): string {
     [Network.BASE]: `https://basescan.org/address/${address}`,
     [Network.POLYGON]: `https://polygonscan.com/address/${address}`,
     [Network.SOLANA]: `https://explorer.solana.com/address/${address}`,
+    [Network.NEAR]: `https://nearblocks.io/address/${address}`,
   };
   return explorers[network];
 }
@@ -59,6 +60,7 @@ function getNetworkIcon(network: Network): string {
     [Network.BASE]: 'base.webp',
     [Network.POLYGON]: 'polygon.webp',
     [Network.SOLANA]: 'solana.webp',
+    [Network.NEAR]: 'near.webp',
   };
   return icons[network];
 }
