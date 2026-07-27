@@ -1,13 +1,40 @@
 import { Network, AccessType } from '../types';
 import { USDC_NEAR_TOKEN } from '../constants';
 
-import type { Facilitator, FacilitatorConfig } from '../types';
+import type {
+  Facilitator,
+  FacilitatorConfig,
+  FacilitatorConfigConstructor,
+} from '../types';
 
-export const nearX402: FacilitatorConfig = {
-  url: 'https://x402.mikedotexe.com',
+interface NearX402Props {
+  apiKey: string;
+}
+
+const FACILITATOR_URL = 'https://x402.mikedotexe.com';
+
+export const nearX402: FacilitatorConfigConstructor<NearX402Props> = ({
+  apiKey,
+}) => ({
+  url: FACILITATOR_URL,
+  createAuthHeaders: async () => ({
+    verify: {
+      'X-API-Key': apiKey,
+    },
+    settle: {
+      'X-API-Key': apiKey,
+    },
+    supported: {
+      'X-API-Key': apiKey,
+    },
+  }),
+});
+
+export const nearX402Discovery: FacilitatorConfig = {
+  url: FACILITATOR_URL,
 };
 
-export const nearX402Facilitator: Facilitator = {
+export const nearX402Facilitator = {
   id: 'nearX402',
   metadata: {
     name: 'NEAR x402 Facilitator',
@@ -17,7 +44,8 @@ export const nearX402Facilitator: Facilitator = {
     color: '#00ec97',
   },
   config: nearX402,
-  facilitatorUrl: 'https://x402.mikedotexe.com',
+  discoveryConfig: nearX402Discovery,
+  facilitatorUrl: FACILITATOR_URL,
   accessType: AccessType.GATED,
   fee: 0,
   addresses: {
@@ -29,4 +57,4 @@ export const nearX402Facilitator: Facilitator = {
       },
     ],
   },
-};
+} as const satisfies Facilitator<NearX402Props>;
