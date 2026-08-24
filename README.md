@@ -38,7 +38,13 @@ yarn add @swader/x402facilitators
 ### Minimal Example
 
 ```typescript
-import { coinbase, thirdweb } from '@swader/x402facilitators';
+import { arispay, coinbase, thirdweb } from '@swader/x402facilitators';
+
+paymentMiddleware(
+  address,
+  resources,
+  arispay // Base mainnet with no signup or API key
+);
 
 paymentMiddleware(
   address,
@@ -75,10 +81,13 @@ This is useful for building agents that search for tools.
 ### Discovery API
 
 ```typescript
-import { coinbaseDiscovery, kamiyoDiscovery, listAllFacilitatorResources } from '@swader/x402facilitators';
+import { arispayDiscovery, coinbaseDiscovery, kamiyoDiscovery, listAllFacilitatorResources } from '@swader/x402facilitators';
 
 // List all resources from a facilitator
 const resources = await listAllFacilitatorResources(coinbaseDiscovery);
+
+// Or from ArisPay (Base mainnet, no signup)
+const arispayResources = await listAllFacilitatorResources(arispayDiscovery);
 
 // Or from KAMIYO (multi-chain)
 const kamiyoResources = await listAllFacilitatorResources(kamiyoDiscovery);
@@ -89,6 +98,7 @@ const kamiyoResources = await listAllFacilitatorResources(kamiyoDiscovery);
 The following facilitators currently support resource discovery:
 
 - **Coinbase** - Enterprise-grade facilitator with SDK
+- **ArisPay** - Public Base mainnet facilitator with no signup
 - **AurraCloud** - Infrastructure-focused facilitator
 - **thirdweb** - Web3 development platform
 - **PayAI** - AI-payment infrastructure
@@ -120,6 +130,7 @@ This package includes pre-configured integrations for the following X402 facilit
 | Facilitator    | Networks      | Discovery | Setup Required                 |
 | -------------- | ------------- | --------- | ------------------------------ |
 | **Auto**       | BASE          | No        | No                             |
+| **ArisPay**    | BASE          | ✅ Yes    | No                             |
 | **Coinbase**   | BASE, SOLANA  | ✅ Yes    | Yes - Requires CDP API Creds   |
 | **AurraCloud** | BASE          | ✅ Yes    | Yes - API key                  |
 | **thirdweb**   | BASE, POLYGON | ✅ Yes    | Yes - Secret key               |
@@ -146,6 +157,7 @@ This package includes pre-configured integrations for the following X402 facilit
 // Simple facilitators (no setup)
 import {
   auto,
+  arispay,
   coinbase,
   payai,
   daydreams,

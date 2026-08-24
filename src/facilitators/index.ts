@@ -1,4 +1,9 @@
 export { auto, autoFacilitator } from './auto';
+export {
+  arispay,
+  arispayDiscovery,
+  arispayFacilitator,
+} from './arispay';
 export { coinbase, coinbaseFacilitator } from './coinbase';
 export { aurracloud, aurracloudFacilitator } from './aurracloud';
 export { thirdweb, thirdwebFacilitator } from './thirdweb';
