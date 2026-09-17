@@ -50,6 +50,7 @@ function getExplorerUrl(address: string, network: Network): string {
     [Network.BASE]: `https://basescan.org/address/${address}`,
     [Network.POLYGON]: `https://polygonscan.com/address/${address}`,
     [Network.SOLANA]: `https://explorer.solana.com/address/${address}`,
+    [Network.ARC]: `https://explorer.arc.io/address/${address}`,
   };
   return explorers[network];
 }
@@ -59,6 +60,9 @@ function getNetworkIcon(network: Network): string {
     [Network.BASE]: 'base.webp',
     [Network.POLYGON]: 'polygon.webp',
     [Network.SOLANA]: 'solana.webp',
+    // No arc.webp in assets/ yet, so this falls back to the Base icon rather than breaking the build.
+    // Happy to add a proper icon if you want one.
+    [Network.ARC]: 'base.webp',
   };
   return icons[network];
 }
